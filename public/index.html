@@ -223,7 +223,7 @@
                         height="2px"
                         width="9px"
                       />
-                      <p class="item__current_amount">1</p>
+                      <p class="item__current_amount">200</p>
                       <img
                         src="img/plus.svg"
                         alt="plus"
@@ -234,7 +234,7 @@
                     </div>
                   </li>
                   <li class="item__interaction">
-                    <p class="item__left">Осталось 2 шт.</p>
+                    <p class="item__left"></p>
                   </li>
                   <li class="item__interaction">
                     <img
@@ -337,7 +337,7 @@
                         height="2px"
                         width="9px"
                       />
-                      <p class="item__current_amount">1</p>
+                      <p class="item__current_amount">2</p>
                       <img
                         src="img/plus.svg"
                         alt="plus"
@@ -416,7 +416,6 @@
               </li>
             </ul>
           </section>
-
           <section class="missing__goods">
             <div class="missing__goods_list_head">
               <div class="flexbox">
@@ -607,9 +606,114 @@
               </li>
             </ul>
           </section>
+
+          <section class="delivery box">
+            <div class="delivery__header">
+              <h1 class="header">Способ доставки</h1>
+              <p class="change">Изменить</p>
+            </div>
+          </section>
+          <section class="way__pay"></section>
+          <section class="receiver"></section>
         </div>
+
         <div class="main__right_part">
-          <!-- <section class="total__price"></section> -->
+          <section class="total__price">
+            <ul class="total__price_parts">
+              <li class="total__price_up">
+                <ul class="total__price_list">
+                  <li class="price__list_item">
+                    <div class="total__price_header">
+                      <h1 class="header">Итого</h1>
+                      <p class="header">2 101 063 сом</p>
+                    </div>
+                    <ul class="price_list">
+                      <li class="total_price_item font_m">
+                        <p class="total__price_position">4 товара</p>
+                        <p class="cost">2 302 048 сом</p>
+                      </li>
+                      <li class="total_price_item font_m">
+                        <p class="total__price_position">Скидка</p>
+                        <p class="cost">-200 985 сом</p>
+                      </li>
+                      <li class="total_price_item font_m">
+                        <p class="total__price_position">Доставка</p>
+                        <p class="cost">Бесплатно</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="delivery__list_item">
+                    <div class="delivery__block">
+                      <div class="delivery__block_header">
+                        <h1 class="font_l">Достатвка в пункт выдачи</h1>
+                        <img
+                          src="img/edit.svg"
+                          alt="edit"
+                          class="edit"
+                          height="16px"
+                          width="16px"
+                        />
+                      </div>
+                      <p class="delivery__block_adress font_s">
+                        Бишкек, улица Ахматбека Суюмбаева, 12/1
+                      </p>
+                      <p class="delivery__block_dates"><span class="date">5-8 фев.</span></p>
+                    </div>
+                    <div class="info__block">
+                      <img src="img/check.svg" class="mark" alt="img" height="22px" width="22px" />
+                      <p class="info__block_text font_s">
+                        Обратная доставка товаров на склад при отказе —
+                        <span class="free">бесплатно</span>
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="payment__list_item">
+                    <div class="payment__block">
+                      <div class="payment__block_header">
+                        <h1 class="font_l">Оплата картой</h1>
+                        <img
+                          src="img/edit.svg"
+                          alt="edit"
+                          class="edit"
+                          height="16px"
+                          width="16px"
+                        />
+                      </div>
+                      <div class="payment__block_card">
+                        <img
+                          class="mark"
+                          src="img/card.svg"
+                          alt="card"
+                          height="24px"
+                          width="32px"
+                        />
+                        <p class="font_s">1234 12•• •••• 1234</p>
+                      </div>
+                    </div>
+                    <div class="payment__data">
+                      <div class="flex">
+                        <div class="checkbox"></div>
+                        <p class="font_s">Списать оплату сразу</p>
+                      </div>
+                      <p class="font_s">Спишем оплату с карты при получении</p>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="total__price_bottom">
+                <!-- <button class="order__button font_l">Заказать</button> -->
+                <div class="agreements">
+                  <img class="mark" src="img/mark.svg" alt="mark" height="10px" width="13px" />
+                  <p class="font_s">
+                    Соглашаюсь
+                    <span class="underline">с правилами пользования торговой площадкой</span> и
+                    <span class="underline">возврата</span> 
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
       <footer class="footer__container _container">
