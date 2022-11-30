@@ -606,17 +606,94 @@
               </li>
             </ul>
           </section>
-
-          <section class="delivery box">
-            <div class="delivery__header">
-              <h1 class="header">Способ доставки</h1>
-              <p class="change">Изменить</p>
+          <section class="delivery box delivery__box">
+            <div class="delivery__box_up">
+              <div class="delivery__header">
+                <h1 class="header">Способ доставки</h1>
+                <p class="change edit">Изменить</p>
+              </div>
+              <ul class="delivery__box_list">
+                <li class="delivery__box_item">
+                  <div class="delivery__box_left font_b">Пункт выдачи</div>
+                  <div class="delivery__box_right_point">
+                    <div class="delivey__box_adress font_m">
+                      Бишкек, улица Ахматбека Суюмбаева, 12/1
+                    </div>
+                    <div class="delivery__box_data font_s">
+                      <div class="delivery__box_mark">
+                        <img
+                          src="img/star.svg"
+                          alt="score"
+                          class="score_img"
+                          height="11px"
+                          width="11px"
+                        />
+                        <p class="score">4.99</p>
+                      </div>
+                      <div class="delivery__box_hours">Ежедневно с 10 до 21</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="delivery__box_item">
+                  <div class="delivery__box_left font_b">Стоимость доставки</div>
+                  <div class="delivery__box_right"><p>Бесплатно</p></div>
+                </li>
+                <li class="delivery__box_item">
+                  <div class="delivery__box_left font_b">5—6 февраля</div>
+                  <div class="delivery__box_right">
+                    <img src="img/1.svg" alt="item" height="56px" width="40px" />
+                    <img src="img/2.svg" alt="item" height="56px" width="40px" />
+                    <img src="img/3.svg" alt="item" height="56px" width="40px" />
+                  </div>
+                </li>
+                <li class="delivery__box_item">
+                  <div class="delivery__box_left font_b">7—8 февраля</div>
+                  <div class="delivery__box_right">
+                    <img src="img/2.svg" alt="item" height="56px" width="40px" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="delivery__box_bottom">
+              <img src="img/check.svg" class="mark" alt="img" height="22px" width="22px" />
+              <p class="info__block_text font_s">
+                Обратная доставка товаров на склад при отказе —
+                <span class="free">бесплатно</span>
+              </p>
             </div>
           </section>
-          <section class="way__pay"></section>
-          <section class="receiver"></section>
+          <section class="way__pay box">
+            <div class="way__pay_header">
+              <h1 class="header">Способ оплаты</h1>
+              <p class="change edit">Изменить</p>
+            </div>
+            <div class="way__pay_box">
+              <div class="payment__block_card">
+                <img class="mark" src="img/card.svg" alt="card" height="24px" width="32px" />
+                <p class="font_m">1234 12•• •••• 1234 01/30</p>
+              </div>
+              <p class="way__pat_text font_s">Спишем оплату с карты при получении</p>
+            </div>
+          </section>
+          <section class="receiver box">
+            <div class="way__pay_header">
+              <h1 class="header">Получатель</h1>
+            </div>
+            <div class="receiver__area">
+              <div class="receiver__area_up">
+                <input type="text" class="receiver__input_name" placeholder="Имя" />
+                <input type="text" class="receiver__input_surname" placeholder="Фамилия" />
+              </div>
+              <div class="receiver__area_bottom">
+                <input type="text" class="receiver__input_email" placeholder="Почта" />
+                <input type="text" class="receiver__input_phone" placeholder="Телефон" />
+                <!-- <div class="inn__input"> -->
+                <input type="text" class="receiver__input_inn" placeholder="ИНН" />
+                <!-- <p class="inn__text">Для таможенного оформления</p> -->
+              </div>
+            </div>
+          </section>
         </div>
-
         <div class="main__right_part">
           <section class="total__price">
             <ul class="total__price_parts">
@@ -702,13 +779,13 @@
                 </ul>
               </li>
               <li class="total__price_bottom">
-                <!-- <button class="order__button font_l">Заказать</button> -->
+                <button class="order__button font_l">Заказать</button>
                 <div class="agreements">
                   <img class="mark" src="img/mark.svg" alt="mark" height="10px" width="13px" />
                   <p class="font_s">
                     Соглашаюсь
                     <span class="underline">с правилами пользования торговой площадкой</span> и
-                    <span class="underline">возврата</span> 
+                    <span class="underline">возврата</span>
                   </p>
                 </div>
               </li>
