@@ -67,7 +67,9 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
-
+input:focus {
+  outline: none;
+}
 html,
 body {
   background-color: white;
@@ -106,8 +108,7 @@ body {
   max-width: 170px;
   gap: 15px;
 }
-/* .logo {
-} */
+
 .header__logo_img_mobile {
   cursor: pointer;
   display: none;
@@ -164,8 +165,7 @@ body {
 .header__menu {
   width: 170px;
 }
-/* .menu {
-} */
+
 .menu__list {
   display: flex;
   align-items: center;
@@ -211,20 +211,28 @@ body {
     align-items: flex-start !important;
   }
 
-  .cart__item_right,
-  .missing__goods_item_right {
+  .item__price {
     display: none !important;
   }
-  .cart__item_interactions_mobile,
-  .missing__goods_item_interactions_mobile {
-    display: flex !important;
-    align-items: center;
+  .cart__item_interactions {
+    flex-direction: row !important;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .cart__item_right {
     width: 100%;
   }
 
+  .missing__goods_item_right {
+    display: none !important;
+  }
+
   .missing__goods_item_interactions_mobile {
-    justify-content: flex-end !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
 
@@ -286,6 +294,10 @@ body {
   .item__size {
     display: none !important;
   }
+
+  .item__fabricator {
+    display: none !important;
+  }
   .flexbox__info {
     display: none !important;
   }
@@ -303,7 +315,7 @@ body {
     text-overflow: ellipsis !important;
   }
 
-  .checkbox {
+  .cart__item_checkbox {
     position: absolute;
     top: 4px;
     left: 4px;
@@ -331,6 +343,20 @@ body {
   }
 }
 /* ----------------------------------------------common------------------------------------------- */
+.like__color {
+  fill: #d548be !important;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
 .box {
   max-width: 891px;
   padding: 16px 24px 24px;
@@ -349,12 +375,18 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
-
+.font_pop {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 .font_m,
 .font_b,
 .font_l {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 600;
 }
 
 .font_m {
@@ -432,6 +464,7 @@ img[alt='arrow'],
 .item__delete,
 .item__minus,
 .item__plus,
+#object,
 img[alt='info'],
 .edit,
 .date,
@@ -482,11 +515,36 @@ img[alt='info'],
 }
 
 .cart__list_checkbox,
+.checkbox__payment,
 .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 22px;
   width: 22px;
   border: 1px solid #c5c5c8;
   border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart__item_checkbox {
+}
+
+.white__mark {
+  display: none;
+}
+
+.checkbox:hover img {
+  display: block;
+}
+
+.checkbox:hover {
+  background: #cb11ab;
+  border: 1px solid transparent;
+}
+.checkbox__checked {
+  background: #cb11ab !important;
+  border: 1px solid transparent;
 }
 
 .flexbox {
@@ -504,11 +562,40 @@ img[alt='info'],
 }
 
 .flexbox__info {
+  position: relative;
   align-self: flex-start;
   display: inline-flex;
   gap: 10px;
   align-items: center;
 }
+
+.info {
+  position: relative;
+}
+
+.show__flex {
+  display: flex !important;
+}
+
+.info__popup {
+  box-shadow: 0px 2px 10px rgb(0 0 0 / 15%), 0px 0px 1px rgb(0 0 0 / 30%);
+  position: absolute;
+  z-index: 50;
+  gap: 8px;
+  right: -130px;
+  bottom: -110px;
+
+  display: none;
+  flex-direction: column;
+  background: #e7e7e7;
+  border-radius: 8px;
+  padding: 11px 16px 13px 16px;
+}
+
+.info__popup_place {
+  text-align: center;
+}
+
 .flexbox {
   align-self: flex-start;
   display: inline-flex;
@@ -527,7 +614,7 @@ img[alt='info'],
   width: 22px;
   border-radius: 6px;
   position: absolute;
-  bottom: 4px;
+  bottom: 20px;
   left: 4px;
   background: #f4f3f3;
   text-align: center;
@@ -557,9 +644,6 @@ img[alt='info'],
   color: #a0a0a4;
 }
 
-.cart__item_interactions_mobile {
-  display: none;
-}
 .cart__item_interactions,
 .missing__goods_item_interactions {
   display: flex;
@@ -584,12 +668,7 @@ img[alt='info'],
   justify-content: space-evenly;
   margin-bottom: 8px;
 }
-/* .item__minus {
-}
-.item__current_amount {
-}
-.item__plus {
-} */
+
 .item__left {
   font-style: normal;
   font-weight: 400;
@@ -598,12 +677,7 @@ img[alt='info'],
   color: #ff3b30;
   margin-bottom: 10px;
 }
-/* .item__like_delete {
-}
 
-.item__delete {
-}
-*/
 .item__price {
   display: flex;
   flex-direction: column;
@@ -611,6 +685,8 @@ img[alt='info'],
 }
 
 .item__like {
+  z-index: 10;
+  cursor: pointer;
   margin-right: 20px;
 }
 .item__actual_price {
@@ -710,12 +786,7 @@ img[alt='info'],
   align-items: center;
   gap: 5px;
 }
-/* .score_img {
-}
-.score {
-}
-.delivery__box_hours {
-} */
+
 .delivery__box_bottom {
   display: flex;
   align-items: center;
@@ -737,11 +808,7 @@ img[alt='info'],
   justify-content: space-between;
   gap: 24px;
 }
-/* .total__price_up {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
+
 .total__price_list {
   display: flex;
   flex-direction: column;
@@ -757,11 +824,7 @@ img[alt='info'],
   align-items: center;
   justify-content: space-between;
 }
-/* .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
+
 .price_list {
   display: flex;
   flex-direction: column;
@@ -772,10 +835,7 @@ img[alt='info'],
   align-items: center;
   justify-content: space-between;
 }
-/* .total__price_position {
-}
-.price {
-} */
+
 .date {
   color: #cb11ab;
   border-bottom: 1px dashed #cb11ab;
@@ -826,9 +886,7 @@ img[alt='info'],
   background: #e1e1e1;
   border-radius: 8px;
 }
-/* .edit {
-}
- */
+
 .delivery__block_adress {
   display: flex;
 }
@@ -838,10 +896,10 @@ img[alt='info'],
   font-size: 13px;
   line-height: 16px;
   font-weight: 400;
-  /* border-top: 1px dashed #cb11ab; */
 }
 .flex {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 .info__block {
@@ -966,7 +1024,3 @@ img[alt='info'],
   justify-content: center;
   align-items: center;
 }
-/* .footer__copyrights {
-}
-.footer__copyrights_text {
-} */

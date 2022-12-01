@@ -69,16 +69,38 @@
             <h1 class="cart__header">Корзина</h1>
             <div class="cart__list_head">
               <div class="flexbox">
-                <div class="cart__list_checkbox"></div>
+                <div class="checkbox cart__list_checkbox">
+                  <img
+                    src="img/white-mark.svg"
+                    class="white__mark"
+                    alt="mark"
+                    height="10px"
+                    width="13px"
+                  />
+                </div>
                 <p class="cart__select_all">Выбрать все</p>
               </div>
-              <img src="img/arrow-up.svg" alt="arrow" height="9px" width="16px" />
+              <img
+                src="img/arrow-up.svg"
+                class="arrow__cart"
+                alt="arrow"
+                height="9px"
+                width="16px"
+              />
             </div>
             <ul class="cart__list">
               <li class="cart__list_item">
                 <div class="cart__item_left">
                   <div class="flexbox">
-                    <div class="checkbox"></div>
+                    <div class="checkbox cart__item_checkbox">
+                      <img
+                        src="img/white-mark.svg"
+                        class="white__mark"
+                        alt="mark"
+                        height="10px"
+                        width="13px"
+                      />
+                    </div>
                     <img src="img/1.svg" class="img" alt="image" height="96px" width="72px" />
                     <div class="item__size_mobile">56</div>
                   </div>
@@ -95,50 +117,18 @@
                     <p class="item__place">Коледино WB</p>
                     <div class="flexbox__info">
                       <p class="item__fabricator">OOO Вайлдберриз</p>
-                      <img src="img/info.svg" alt="info" />
+                      <img src="img/info.svg" alt="info" class="info" />
+                      <div class="info__popup">
+                        <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
+                        <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
+                        <p class="info__popup_adress font_s">
+                          129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
+                          офис 34
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <ul class="cart__item_interactions_mobile">
-                  <li class="item__interaction">
-                    <div class="item__mixer">
-                      <img
-                        src="img/minus.svg"
-                        alt="minus"
-                        class="item__minus"
-                        height="2px"
-                        width="9px"
-                      />
-                      <p class="item__current_amount">1</p>
-                      <img
-                        src="img/plus.svg"
-                        alt="plus"
-                        class="item__plus"
-                        height="9px"
-                        width="9px"
-                      />
-                    </div>
-                  </li>
-                  <li class="item__interaction">
-                    <p class="item__left">Осталось 2 шт.</p>
-                  </li>
-                  <li class="item__interaction">
-                    <img
-                      src="img/like.svg"
-                      alt="like"
-                      class="item__like"
-                      height="16px"
-                      width="18px"
-                    />
-                    <img
-                      src="img/delete.svg"
-                      alt="delete"
-                      class="item__delete"
-                      height="16px"
-                      width="15px"
-                    />
-                  </li>
-                </ul>
                 <div class="cart__item_right">
                   <ul class="cart__item_interactions">
                     <li class="item__interaction">
@@ -150,7 +140,7 @@
                           height="2px"
                           width="9px"
                         />
-                        <p class="item__current_amount">1</p>
+                        <p class="item__current_amount">0</p>
                         <img
                           src="img/plus.svg"
                           alt="plus"
@@ -164,20 +154,24 @@
                       <p class="item__left">Осталось 2 шт.</p>
                     </li>
                     <li class="item__interaction">
-                      <img
-                        src="img/like.svg"
-                        alt="like"
+                      <object
+                        id="object"
+                        title="like"
                         class="item__like"
+                        type="image/svg+xml"
+                        data="img/like.svg"
                         height="16px"
                         width="18px"
-                      />
-                      <img
-                        src="img/delete.svg"
-                        alt="delete"
+                      ></object>
+                      <object
+                        data="img/delete.svg"
+                        id="delete"
+                        title="delete"
                         class="item__delete"
+                        type="image/svg+xml"
                         height="16px"
                         width="15px"
-                      />
+                      ></object>
                     </li>
                   </ul>
                   <ul class="item__price">
@@ -186,11 +180,18 @@
                   </ul>
                 </div>
               </li>
-
               <li class="cart__list_item">
                 <div class="cart__item_left">
                   <div class="flexbox">
-                    <div class="checkbox"></div>
+                    <div class="checkbox cart__item_checkbox">
+                      <img
+                        src="img/white-mark.svg"
+                        class="white__mark"
+                        alt="mark"
+                        height="10px"
+                        width="13px"
+                      />
+                    </div>
                     <img src="img/2.svg" class="img" alt="image" height="96px" width="72px" />
                   </div>
                   <div class="cart__item_parametrs">
@@ -209,50 +210,18 @@
                     <p class="item__place">Коледино WB</p>
                     <div class="flexbox__info">
                       <p class="item__fabricator">OOO Мегапрофстиль</p>
-                      <img src="img/info.svg" alt="info" />
+                      <img src="img/info.svg" alt="info" class="info" />
+                      <div class="info__popup">
+                        <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
+                        <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
+                        <p class="info__popup_adress font_s">
+                          129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
+                          офис 34
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <ul class="cart__item_interactions_mobile">
-                  <li class="item__interaction">
-                    <div class="item__mixer">
-                      <img
-                        src="img/minus.svg"
-                        alt="minus"
-                        class="item__minus"
-                        height="2px"
-                        width="9px"
-                      />
-                      <p class="item__current_amount">200</p>
-                      <img
-                        src="img/plus.svg"
-                        alt="plus"
-                        class="item__plus"
-                        height="9px"
-                        width="9px"
-                      />
-                    </div>
-                  </li>
-                  <li class="item__interaction">
-                    <p class="item__left"></p>
-                  </li>
-                  <li class="item__interaction">
-                    <img
-                      src="img/like.svg"
-                      alt="like"
-                      class="item__like"
-                      height="16px"
-                      width="18px"
-                    />
-                    <img
-                      src="img/delete.svg"
-                      alt="delete"
-                      class="item__delete"
-                      height="16px"
-                      width="15px"
-                    />
-                  </li>
-                </ul>
                 <div class="cart__item_right">
                   <ul class="cart__item_interactions">
                     <li class="item__interaction">
@@ -264,7 +233,7 @@
                           height="2px"
                           width="9px"
                         />
-                        <p class="item__current_amount">200</p>
+                        <p class="item__current_amount">0</p>
                         <img
                           src="img/plus.svg"
                           alt="plus"
@@ -278,20 +247,24 @@
                       <p class="item__left"></p>
                     </li>
                     <li class="item__interaction">
-                      <img
-                        src="img/like.svg"
-                        alt="like"
+                      <object
+                        id="object"
+                        title="like"
                         class="item__like"
+                        type="image/svg+xml"
+                        data="img/like.svg"
                         height="16px"
                         width="18px"
-                      />
-                      <img
-                        src="img/delete.svg"
-                        alt="delete"
+                      ></object>
+                      <object
+                        data="img/delete.svg"
+                        id="delete"
+                        title="delete"
                         class="item__delete"
+                        type="image/svg+xml"
                         height="16px"
                         width="15px"
-                      />
+                      ></object>
                     </li>
                   </ul>
                   <ul class="item__price">
@@ -300,11 +273,18 @@
                   </ul>
                 </div>
               </li>
-
               <li class="cart__list_item">
                 <div class="cart__item_left">
                   <div class="flexbox">
-                    <div class="checkbox"></div>
+                    <div class="checkbox cart__item_checkbox">
+                      <img
+                        src="img/white-mark.svg"
+                        class="white__mark"
+                        alt="mark"
+                        height="10px"
+                        width="13px"
+                      />
+                    </div>
                     <img src="img/3.svg" class="img" alt="image" height="96px" width="72px" />
                   </div>
                   <div class="cart__item_parametrs">
@@ -316,57 +296,21 @@
                       Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
                       шестигранные,Faber-Castell
                     </p>
-                    <!-- <div class="flexbox__info">
-                      <p class="item__color"></p>
-                      <p class="item__size"></p>
-                    </div> -->
                     <p class="item__place">Коледино WB</p>
-                    <div class="flexbox">
+                    <div class="flexbox__info">
                       <p class="item__fabricator">OOO Вайлдберриз</p>
-                      <img src="img/info.svg" alt="info" />
+                      <img src="img/info.svg" alt="info" class="info" />
+                      <div class="info__popup">
+                        <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
+                        <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
+                        <p class="info__popup_adress font_s">
+                          129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
+                          офис 34
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <ul class="cart__item_interactions_mobile">
-                  <li class="item__interaction">
-                    <div class="item__mixer">
-                      <img
-                        src="img/minus.svg"
-                        alt="minus"
-                        class="item__minus"
-                        height="2px"
-                        width="9px"
-                      />
-                      <p class="item__current_amount">2</p>
-                      <img
-                        src="img/plus.svg"
-                        alt="plus"
-                        class="item__plus"
-                        height="9px"
-                        width="9px"
-                      />
-                    </div>
-                  </li>
-                  <li class="item__interaction">
-                    <p class="item__left">Осталось 2 шт.</p>
-                  </li>
-                  <li class="item__interaction">
-                    <img
-                      src="img/like.svg"
-                      alt="like"
-                      class="item__like"
-                      height="16px"
-                      width="18px"
-                    />
-                    <img
-                      src="img/delete.svg"
-                      alt="delete"
-                      class="item__delete"
-                      height="16px"
-                      width="15px"
-                    />
-                  </li>
-                </ul>
                 <div class="cart__item_right">
                   <ul class="cart__item_interactions">
                     <li class="item__interaction">
@@ -378,7 +322,7 @@
                           height="2px"
                           width="9px"
                         />
-                        <p class="item__current_amount">2</p>
+                        <p class="item__current_amount">0</p>
                         <img
                           src="img/plus.svg"
                           alt="plus"
@@ -392,20 +336,24 @@
                       <p class="item__left">Осталось 2 шт.</p>
                     </li>
                     <li class="item__interaction">
-                      <img
-                        src="img/like.svg"
-                        alt="like"
+                      <object
+                        id="object"
+                        title="like"
                         class="item__like"
+                        type="image/svg+xml"
+                        data="img/like.svg"
                         height="16px"
                         width="18px"
-                      />
-                      <img
-                        src="img/delete.svg"
-                        alt="delete"
+                      ></object>
+                      <object
+                        data="img/delete.svg"
+                        id="delete"
+                        title="delete"
                         class="item__delete"
+                        type="image/svg+xml"
                         height="16px"
                         width="15px"
-                      />
+                      ></object>
                     </li>
                   </ul>
                   <ul class="item__price">
@@ -421,7 +369,13 @@
               <div class="flexbox">
                 <p class="missing__goods_text">Отсутствуют · 3 товара</p>
               </div>
-              <img src="img/arrow-up.svg" alt="arrow" height="9px" width="16px" />
+              <img
+                src="img/arrow-up.svg"
+                class="arrow__missing"
+                alt="arrow"
+                height="9px"
+                width="16px"
+              />
             </div>
             <ul class="missing__goods_list">
               <li class="missing__goods_list_item">
@@ -446,44 +400,51 @@
                 </div>
                 <ul class="missing__goods_item_interactions_mobile">
                   <li class="item__interaction">
-                    <img
-                      src="img/like.svg"
-                      alt="like"
+                    <object
+                      id="object"
+                      title="like"
                       class="item__like"
+                      type="image/svg+xml"
+                      data="img/like.svg"
                       height="16px"
                       width="18px"
-                    />
-                    <img
-                      src="img/delete.svg"
-                      alt="delete"
+                    ></object>
+                    <object
+                      data="img/delete.svg"
+                      id="delete"
+                      title="delete"
                       class="item__delete"
+                      type="image/svg+xml"
                       height="16px"
                       width="15px"
-                    />
+                    ></object>
                   </li>
                 </ul>
                 <div class="missing__goods_item_right">
                   <ul class="cart__item_interactions">
                     <li class="item__interaction">
-                      <img
-                        src="img/like.svg"
-                        alt="like"
+                      <object
+                        id="object"
+                        title="like"
                         class="item__like"
+                        type="image/svg+xml"
+                        data="img/like.svg"
                         height="16px"
                         width="18px"
-                      />
-                      <img
-                        src="img/delete.svg"
-                        alt="delete"
+                      ></object>
+                      <object
+                        data="img/delete.svg"
+                        id="delete"
+                        title="delete"
                         class="item__delete"
+                        type="image/svg+xml"
                         height="16px"
                         width="15px"
-                      />
+                      ></object>
                     </li>
                   </ul>
                 </div>
               </li>
-
               <li class="missing__goods_list_item">
                 <div class="missing__goods_item_left">
                   <div class="flexbox">
@@ -507,44 +468,51 @@
                 </div>
                 <ul class="missing__goods_item_interactions_mobile">
                   <li class="item__interaction">
-                    <img
-                      src="img/like.svg"
-                      alt="like"
+                    <object
+                      id="object"
+                      title="like"
                       class="item__like"
+                      type="image/svg+xml"
+                      data="img/like.svg"
                       height="16px"
                       width="18px"
-                    />
-                    <img
-                      src="img/delete.svg"
-                      alt="delete"
+                    ></object>
+                    <object
+                      data="img/delete.svg"
+                      id="delete"
+                      title="delete"
                       class="item__delete"
+                      type="image/svg+xml"
                       height="16px"
                       width="15px"
-                    />
+                    ></object>
                   </li>
                 </ul>
                 <div class="missing__goods_item_right">
                   <ul class="cart__item_interactions">
                     <li class="item__interaction">
-                      <img
-                        src="img/like.svg"
-                        alt="like"
+                      <object
+                        id="object"
+                        title="like"
                         class="item__like"
+                        type="image/svg+xml"
+                        data="img/like.svg"
                         height="16px"
                         width="18px"
-                      />
-                      <img
-                        src="img/delete.svg"
-                        alt="delete"
+                      ></object>
+                      <object
+                        data="img/delete.svg"
+                        id="delete"
+                        title="delete"
                         class="item__delete"
+                        type="image/svg+xml"
                         height="16px"
                         width="15px"
-                      />
+                      ></object>
                     </li>
                   </ul>
                 </div>
               </li>
-
               <li class="missing__goods_list_item">
                 <div class="missing__goods_item_left">
                   <div class="flexbox">
@@ -555,9 +523,16 @@
                       height="96px"
                       width="72px"
                     />
-                    <div class="checkbox"></div>
+                    <div class="checkbox">
+                      <img
+                        src="img/white-mark.svg"
+                        class="white__mark"
+                        alt="mark"
+                        height="10px"
+                        width="13px"
+                      />
+                    </div>
                   </div>
-
                   <div class="missing__goods_item_parametrs">
                     <p class="item__description">
                       Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
@@ -567,39 +542,47 @@
                 </div>
                 <ul class="missing__goods_item_interactions_mobile">
                   <li class="item__interaction">
-                    <img
-                      src="img/like.svg"
-                      alt="like"
+                    <object
+                      id="object"
+                      title="like"
                       class="item__like"
+                      type="image/svg+xml"
+                      data="img/like.svg"
                       height="16px"
                       width="18px"
-                    />
-                    <img
-                      src="img/delete.svg"
-                      alt="delete"
+                    ></object>
+                    <object
+                      data="img/delete.svg"
+                      id="delete"
+                      title="delete"
                       class="item__delete"
+                      type="image/svg+xml"
                       height="16px"
                       width="15px"
-                    />
+                    ></object>
                   </li>
                 </ul>
                 <div class="missing__goods_item_right">
                   <ul class="cart__item_interactions">
                     <li class="item__interaction">
-                      <img
-                        src="img/like.svg"
-                        alt="like"
+                      <object
+                        id="object"
+                        title="like"
                         class="item__like"
+                        type="image/svg+xml"
+                        data="img/like.svg"
                         height="16px"
                         width="18px"
-                      />
-                      <img
-                        src="img/delete.svg"
-                        alt="delete"
+                      ></object>
+                      <object
+                        data="img/delete.svg"
+                        id="delete"
+                        title="delete"
                         class="item__delete"
+                        type="image/svg+xml"
                         height="16px"
                         width="15px"
-                      />
+                      ></object>
                     </li>
                   </ul>
                 </div>
@@ -675,7 +658,7 @@
               <p class="way__pat_text font_s">Спишем оплату с карты при получении</p>
             </div>
           </section>
-          <section class="receiver box">
+          <!-- <section class="receiver box">
             <div class="way__pay_header">
               <h1 class="header">Получатель</h1>
             </div>
@@ -687,12 +670,10 @@
               <div class="receiver__area_bottom">
                 <input type="text" class="receiver__input_email" placeholder="Почта" />
                 <input type="text" class="receiver__input_phone" placeholder="Телефон" />
-                <!-- <div class="inn__input"> -->
                 <input type="text" class="receiver__input_inn" placeholder="ИНН" />
-                <!-- <p class="inn__text">Для таможенного оформления</p> -->
               </div>
             </div>
-          </section>
+          </section> -->
         </div>
         <div class="main__right_part">
           <section class="total__price">
@@ -702,7 +683,7 @@
                   <li class="price__list_item">
                     <div class="total__price_header">
                       <h1 class="header">Итого</h1>
-                      <p class="header">2 101 063 сом</p>
+                      <p class="header total__cost">2 101 063 сом</p>
                     </div>
                     <ul class="price_list">
                       <li class="total_price_item font_m">
@@ -744,7 +725,6 @@
                       </p>
                     </div>
                   </li>
-
                   <li class="payment__list_item">
                     <div class="payment__block">
                       <div class="payment__block_header">
@@ -770,7 +750,15 @@
                     </div>
                     <div class="payment__data">
                       <div class="flex">
-                        <div class="checkbox"></div>
+                        <div class="checkbox checkbox__payment">
+                          <img
+                            src="img/white-mark.svg"
+                            class="white__mark"
+                            alt="mark"
+                            height="10px"
+                            width="13px"
+                          />
+                        </div>
                         <p class="font_s">Списать оплату сразу</p>
                       </div>
                       <p class="font_s">Спишем оплату с карты при получении</p>
