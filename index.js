@@ -160,6 +160,68 @@ window.addEventListener(
         order_button.textContent = `Заказать`;
       }
     });
+    // --------------------------------------------popup---------------------------------------------//
+
+    const popap_bg = document.querySelector('.popup__bg');
+    const popap_pay = document.querySelector('#popup__pay');
+    const popap_delivery = document.querySelector('#popup__delivery');
+    const change_card = document.querySelectorAll('#change__card');
+    const change_delivery = document.querySelectorAll('#change__delivery');
+
+    change_card.forEach((item) => {
+      item.addEventListener('click', () => {
+        popap_bg.classList.add('active');
+        popap_pay.classList.add('active');
+
+        popap_pay.querySelector('.close-popup').addEventListener('click', () => {
+          popap_bg.classList.remove('active');
+          popap_pay.classList.remove('active');
+        });
+      });
+    });
+
+    change_delivery.forEach((item) => {
+      item.addEventListener('click', () => {
+        popap_bg.classList.add('active');
+        popap_delivery.classList.add('active');
+
+        popap_delivery.querySelector('.close-popup').addEventListener('click', () => {
+          popap_bg.classList.remove('active');
+          popap_delivery.classList.remove('active');
+        });
+      });
+    });
+
+    //radio_pay_popup
+    const pay_radio = document.querySelectorAll('.popup__pay_radio');
+
+    pay_radio.forEach((item) =>
+      item.addEventListener('click', () => {
+        pay_radio.forEach((radio) => {
+          radio.classList.remove('active');
+        });
+        item.classList.add('active');
+      }),
+    );
+
+    const popup_pay_btn = document.querySelector('.popup__pay_button');
+    const payment_blocks = document.querySelectorAll('.payment__block_card');
+
+    popup_pay_btn.addEventListener('click', () => {
+      for (let index = 0; index < pay_radio.length; index++) {
+        const element = pay_radio[index];
+        if (element.matches('.active')) {
+          payment_blocks.forEach((payment__block) => {
+            const card = element.parentNode.querySelector('.card__block').outerHTML;
+
+            payment__block.innerHTML = `${card}`;
+            popap_bg.classList.remove('active');
+            popap_pay.classList.remove('active');
+          });
+          break;
+        }
+      }
+    });
 
     //-------------------------------//
   },

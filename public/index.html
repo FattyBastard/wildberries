@@ -9,6 +9,88 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="popup__bg">
+        <div class="popup" id="popup__delivery">
+          <img src="img/close.svg" class="close-popup" height="24px" width="24px" />
+        </div>
+        <div class="popup" id="popup__pay">
+          <img src="img/close.svg" class="close-popup" height="24px" width="24px" />
+          <div class="popup__pay_body">
+            <div class="popup__pay_up">
+              <div class="popup__pay_header">Способ оплаты</div>
+              <ul class="popup__pay_list">
+                <li class="popup__pay_item">
+                  <div class="popup__pay_radio active"></div>
+                  <div class="card__block">
+                    <img
+                      src="img/card1.svg"
+                      alt="card"
+                      class="popup__pay_item_img"
+                      height="24px"
+                      width="32px"
+                    />
+                    <p class="popup__pay_card_number">1234 56•• •••• 1234</p>
+                  </div>
+                </li>
+                <li class="popup__pay_item">
+                  <div class="popup__pay_radio"></div>
+                  <div class="card__block">
+                    <img
+                      src="img/card2.svg"
+                      alt="card"
+                      class="popup__pay_item_img"
+                      height="24px"
+                      width="32px"
+                    />
+                    <p class="popup__pay_card_number">3456 56•• •••• 1456</p>
+                  </div>
+                </li>
+                <li class="popup__pay_item">
+                  <div class="popup__pay_radio"></div>
+                  <div class="card__block">
+                    <img
+                      src="img/card3.svg"
+                      alt="card"
+                      class="popup__pay_item_img"
+                      height="24px"
+                      width="32px"
+                    />
+                    <p class="popup__pay_card_number">9873 56•• •••• 1234</p>
+                  </div>
+                </li>
+                <li class="popup__pay_item">
+                  <div class="popup__pay_radio"></div>
+                  <div class="card__block">
+                    <img
+                      src="img/card4.svg"
+                      alt="card"
+                      class="popup__pay_item_img"
+                      height="24px"
+                      width="32px"
+                    />
+                    <p class="popup__pay_card_number">6734 56•• •••• 1234</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button class="popup__pay_button">Выбрать</button>
+          </div>
+
+          <!-- <label>
+            <input type="text" name="name" />
+            <div class="label__text">Ваше имя</div>
+          </label>
+          <label>
+            <input type="tel" name="tel" />
+            <div class="label__text">Ваш телефон</div>
+          </label>
+          <label>
+            <textarea name="message"></textarea>
+            <div class="label__text">Ваше сообщение</div>
+          </label>
+          <button type="submit">Отправить</button> -->
+        </div>
+      </div>
       <header class="header__container _container">
         <img class="header__logo_img_mobile" src="img/burger-mobile.svg" alt="burger" />
         <div class="header__logo logo">
@@ -593,7 +675,7 @@
             <div class="delivery__box_up">
               <div class="delivery__header">
                 <h1 class="header">Способ доставки</h1>
-                <p class="change edit">Изменить</p>
+                <p class="change edit" id="change__delivery">Изменить</p>
               </div>
               <ul class="delivery__box_list">
                 <li class="delivery__box_item">
@@ -648,7 +730,7 @@
           <section class="way__pay box">
             <div class="way__pay_header">
               <h1 class="header">Способ оплаты</h1>
-              <p class="change edit">Изменить</p>
+              <p class="change edit" id="change__card">Изменить</p>
             </div>
             <div class="way__pay_box">
               <div class="payment__block_card">
@@ -705,6 +787,7 @@
                       <div class="delivery__block_header">
                         <h1 class="font_l">Достатвка в пункт выдачи</h1>
                         <img
+                          id="change__delivery"
                           src="img/edit.svg"
                           alt="edit"
                           class="edit"
@@ -730,6 +813,7 @@
                       <div class="payment__block_header">
                         <h1 class="font_l">Оплата картой</h1>
                         <img
+                          id="change__card"
                           src="img/edit.svg"
                           alt="edit"
                           class="edit"
