@@ -160,7 +160,7 @@ window.addEventListener(
         order_button.textContent = `Заказать`;
       }
     });
-    // --------------------------------------------popup---------------------------------------------//
+    // --------------------------------------------show-popups---------------------------------------------//
 
     const popap_bg = document.querySelector('.popup__bg');
     const popap_pay = document.querySelector('#popup__pay');
@@ -217,6 +217,60 @@ window.addEventListener(
             payment__block.innerHTML = `${card}`;
             popap_bg.classList.remove('active');
             popap_pay.classList.remove('active');
+          });
+          break;
+        }
+      }
+    });
+
+    //---------------------------------------------popup-delivery---------------------------------------------//
+
+    const to_home_deliver = document.querySelector('#to__home');
+    const deliver_list_home = document.querySelector('#delivery__list_home');
+
+    const to_point_deliver = document.querySelector('#to__point');
+    const deliver_list_point = document.querySelector('#delivery__list_point');
+
+    to_home_deliver.addEventListener('click', () => {
+      to_home_deliver.classList.toggle('active');
+      to_point_deliver.classList.toggle('active');
+
+      deliver_list_point.classList.toggle('hide');
+      deliver_list_home.classList.toggle('hide');
+    });
+
+    to_point_deliver.addEventListener('click', () => {
+      to_home_deliver.classList.toggle('active');
+      to_point_deliver.classList.toggle('active');
+
+      deliver_list_point.classList.toggle('hide');
+      deliver_list_home.classList.toggle('hide');
+    });
+
+    const delivery_radio = document.querySelectorAll('.popup__delivery_radio');
+
+    delivery_radio.forEach((item) =>
+      item.addEventListener('click', () => {
+        delivery_radio.forEach((radio) => {
+          radio.classList.remove('active');
+        });
+        item.classList.add('active');
+      }),
+    );
+
+    const popup_delivery_btn = document.querySelector('.popup__delivery_button');
+    const delivery_boxes = document.querySelectorAll('#delivery__data');
+
+    popup_delivery_btn.addEventListener('click', () => {
+      for (let index = 0; index < delivery_radio.length; index++) {
+        const element = delivery_radio[index];
+        if (element.matches('.active')) {
+          delivery_boxes.forEach((delivery_box) => {
+            const data = element.parentNode.querySelector('.delivery__box_right_point').outerHTML;
+
+            delivery_box.innerHTML = `${data}`;
+            popap_bg.classList.remove('active');
+            popap_delivery.classList.remove('active');
           });
           break;
         }
