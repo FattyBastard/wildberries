@@ -260,6 +260,12 @@ window.addEventListener(
 
     const popup_delivery_btn = document.querySelector('.popup__delivery_button');
     const delivery_boxes = document.querySelectorAll('#delivery__data');
+    const delete_delivery_adress = document.querySelectorAll('.delete__grey');
+    delete_delivery_adress.forEach((item) => {
+      item.addEventListener('click', () => {
+        item.parentNode.remove();
+      });
+    });
 
     popup_delivery_btn.addEventListener('click', () => {
       for (let index = 0; index < delivery_radio.length; index++) {
