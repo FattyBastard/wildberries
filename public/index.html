@@ -324,7 +324,7 @@
             <li class="menu__item">
               <div class="cart__count">
                 <img class="item__img" src="img/cart.svg" alt="cart" height="23px" width="26px" />
-                <div class="count">3</div>
+                <div class="count">0</div>
               </div>
 
               <p class="item__text">Корзина</p>
@@ -386,14 +386,16 @@
                     <p class="item__place">Коледино WB</p>
                     <div class="flexbox__info">
                       <p class="item__fabricator">OOO Вайлдберриз</p>
-                      <img src="img/info.svg" alt="info" class="info" />
-                      <div class="info__popup">
-                        <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
-                        <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
-                        <p class="info__popup_adress font_s">
-                          129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
-                          офис 34
-                        </p>
+                      <div class="info__wrapper">
+                        <img src="img/info.svg" alt="info" class="info" />
+                        <div class="info__popup">
+                          <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
+                          <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
+                          <p class="info__popup_adress font_s">
+                            129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
+                            офис 34
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -479,14 +481,16 @@
                     <p class="item__place">Коледино WB</p>
                     <div class="flexbox__info">
                       <p class="item__fabricator">OOO Мегапрофстиль</p>
-                      <img src="img/info.svg" alt="info" class="info" />
-                      <div class="info__popup">
-                        <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
-                        <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
-                        <p class="info__popup_adress font_s">
-                          129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
-                          офис 34
-                        </p>
+                      <div class="info__wrapper">
+                        <img src="img/info.svg" alt="info" class="info" />
+                        <div class="info__popup">
+                          <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
+                          <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
+                          <p class="info__popup_adress font_s">
+                            129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
+                            офис 34
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -568,14 +572,16 @@
                     <p class="item__place">Коледино WB</p>
                     <div class="flexbox__info">
                       <p class="item__fabricator">OOO Вайлдберриз</p>
-                      <img src="img/info.svg" alt="info" class="info" />
-                      <div class="info__popup">
-                        <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
-                        <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
-                        <p class="info__popup_adress font_s">
-                          129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
-                          офис 34
-                        </p>
+                      <div class="info__wrapper">
+                        <img src="img/info.svg" alt="info" class="info" />
+                        <div class="info__popup">
+                          <h1 class="info__popup_place font_pop">JJJasdfsdf</h1>
+                          <p class="info__popup_ogrn font_s">ОГРН: 5167746237148</p>
+                          <p class="info__popup_adress font_s">
+                            129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
+                            офис 34
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -945,7 +951,33 @@
               <h1 class="header">Получатель</h1>
             </div>
             <div class="receiver__area">
-              <div class="receiver__area_up">
+              <div class="receiver__input_name">
+                <label for="" class="input__block_label">Имя</label>
+                <input type="text" class="input" placeholder="Имя" />
+                <label for="" class="input__block_error">Ошибка</label>
+              </div>
+              <div class="receiver__input_surname">
+                <label for="" class="input__block_label">Фамилия</label>
+                <input type="text" class="input" placeholder="Фамилия" />
+                <label for="" class="input__block_error">Ошибка</label>
+              </div>
+              <div class="receiver__input_email">
+                <label for="" class="input__block_label">Почта</label>
+                <input type="text" class="input" placeholder="Почта" />
+                <label for="" class="input__block_error">Ошибка</label>
+              </div>
+              <div class="receiver__input_phone">
+                <label for="" class="input__block_label">Телефон</label>
+                <input type="text" class="input" placeholder="Телефон" />
+                <label for="" class="input__block_error">Ошибка</label>
+              </div>
+              <div class="receiver__input_inn">
+                <label for="" class="input__block_label">ИНН</label>
+                <input type="text" class="input" placeholder="ИНН" />
+                <label for="" class="input__block_data">Для томоженного оформления</label>
+              </div>
+
+              <!-- <div class="receiver__area_up">
                 <input type="text" class="receiver__input_name" placeholder="Имя" />
                 <input type="text" class="receiver__input_surname" placeholder="Фамилия" />
               </div>
@@ -953,7 +985,7 @@
                 <input type="text" class="receiver__input_email" placeholder="Почта" />
                 <input type="text" class="receiver__input_phone" placeholder="Телефон" />
                 <input type="text" class="receiver__input_inn" placeholder="ИНН" />
-              </div>
+              </div> -->
             </div>
           </section>
         </div>

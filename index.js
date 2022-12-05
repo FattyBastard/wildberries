@@ -64,7 +64,8 @@ window.addEventListener(
 
     info_labels.forEach((label) => {
       label.addEventListener('click', () => {
-        const parent = label.parentNode;
+        const parent = label.parentNode.parentNode;
+
         const company_name = parent.querySelector('.item__fabricator').textContent;
         const info_popup = parent.querySelector('.info__popup');
 
@@ -283,7 +284,23 @@ window.addEventListener(
       }
     });
 
-    //-------------------------------//
+    //-------------------------------------------------input-area------------------------------------------//
+
+    const input_fields = document.querySelectorAll('.input');
+
+    input_fields.forEach((input) => {
+      input.onfocus = () => {
+        input.placeholder = '';
+        input.parentNode.querySelector('.input__block_label').classList.add('show');
+      };
+      input.onblur = () => {
+        input.placeholder = input.parentNode.querySelector('.input__block_label').textContent;
+
+        if (input.value === '') {
+          input.parentNode.querySelector('.input__block_label').classList.remove('show');
+        }
+      };
+    });
   },
   false,
 );
