@@ -210,10 +210,6 @@ body {
     align-items: flex-start !important;
   }
 
-  .cart__count {
-    position: relative;
-  }
-
   .item__price {
     display: none !important;
   }
@@ -465,13 +461,17 @@ body {
   line-height: 18px;
 }
 
+.cart__count {
+  position: relative;
+}
+
 .info_wrapper {
   position: relative;
 }
 
 .count {
-  top: 10px;
-  right: 30px;
+  top: -10px;
+  right: -10px;
 }
 
 .item__counter {
