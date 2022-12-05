@@ -322,7 +322,11 @@
               <p class="item__text">Профиль</p>
             </li>
             <li class="menu__item">
-              <img class="item__img" src="img/cart.svg" alt="cart" height="23px" width="26px" />
+              <div class="cart__count">
+                <img class="item__img" src="img/cart.svg" alt="cart" height="23px" width="26px" />
+                <div class="count">3</div>
+              </div>
+
               <p class="item__text">Корзина</p>
             </li>
           </ul>
@@ -788,7 +792,7 @@
                       height="96px"
                       width="72px"
                     />
-                    <div class="checkbox">
+                    <div class="checkbox unknown__checkbox">
                       <img
                         src="img/white-mark.svg"
                         class="white__mark"
@@ -889,15 +893,27 @@
                 <li class="delivery__box_item">
                   <div class="delivery__box_left font_b">5—6 февраля</div>
                   <div class="delivery__box_right">
-                    <img src="img/1.svg" alt="item" height="56px" width="40px" />
-                    <img src="img/2.svg" alt="item" height="56px" width="40px" />
-                    <img src="img/3.svg" alt="item" height="56px" width="40px" />
+                    <div class="img__wrapper">
+                      <img src="img/1.svg" alt="item" height="56px" width="40px" />
+                      <!-- <div class="item__counter"></div> -->
+                    </div>
+                    <div class="img__wrapper">
+                      <img src="img/2.svg" alt="item" height="56px" width="40px" />
+                      <div class="item__counter">184</div>
+                    </div>
+                    <div class="img__wrapper">
+                      <img src="img/3.svg" alt="item" height="56px" width="40px" />
+                      <div class="item__counter">2</div>
+                    </div>
                   </div>
                 </li>
                 <li class="delivery__box_item">
                   <div class="delivery__box_left font_b">7—8 февраля</div>
                   <div class="delivery__box_right">
-                    <img src="img/2.svg" alt="item" height="56px" width="40px" />
+                    <div class="img__wrapper">
+                      <img src="img/2.svg" alt="item" height="56px" width="40px" />
+                      <div class="item__counter">16</div>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -923,7 +939,8 @@
               <p class="way__pat_text font_s">Спишем оплату с карты при получении</p>
             </div>
           </section>
-          <!-- <section class="receiver box">
+
+          <section class="receiver box">
             <div class="way__pay_header">
               <h1 class="header">Получатель</h1>
             </div>
@@ -938,7 +955,7 @@
                 <input type="text" class="receiver__input_inn" placeholder="ИНН" />
               </div>
             </div>
-          </section> -->
+          </section>
         </div>
         <div class="main__right_part">
           <section class="total__price">
@@ -978,7 +995,7 @@
                           width="16px"
                         />
                       </div>
-                      <p class="delivery__block_adress font_s" id="delivery__data">
+                      <p class="delivery__block_adress font_s">
                         Бишкек, улица Ахматбека Суюмбаева, 12/1
                       </p>
                       <p class="delivery__block_dates"><span class="date">5-8 фев.</span></p>
