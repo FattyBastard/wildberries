@@ -376,7 +376,19 @@
                   <div class="cart__item_parametrs">
                     <ul class="item__price_mobile">
                       <p class="item__actual_price">522 com</p>
-                      <strike class="item__prev_price">1051 com</strike>
+                      <div class="prev__price_wrapper">
+                        <strike class="item__prev_price">1051 com</strike>
+                        <!-- <div class="prev__price_popup">
+                          <div class="prev__price_left">
+                            <p>Скидка 55%</p>
+                            <p>Скидка покупателя 10%</p>
+                          </div>
+                          <div class="prev__price_right">
+                            <p>-300 com</p>
+                            <p>-30 com</p>
+                          </div>
+                        </div> -->
+                      </div>
                     </ul>
                     <p class="item__description">Футболка UZcotton мужская</p>
                     <div class="flexbox">
@@ -447,7 +459,19 @@
                   </ul>
                   <ul class="item__price">
                     <p class="item__actual_price">522 com</p>
-                    <strike class="item__prev_price">1051 com</strike>
+                    <div class="prev__price_wrapper">
+                      <strike class="item__prev_price">1051 com</strike>
+                      <div class="prev__price_popup hide">
+                        <div class="prev__price_left">
+                          <p>Скидка 55%</p>
+                          <p>Скидка покупателя 10%</p>
+                        </div>
+                        <div class="prev__price_right">
+                          <p>-300 com</p>
+                          <p>-30 com</p>
+                        </div>
+                      </div>
+                    </div>
                   </ul>
                 </div>
               </li>
@@ -468,7 +492,10 @@
                   <div class="cart__item_parametrs">
                     <ul class="item__price_mobile">
                       <p class="item__actual_price">2 100 047 com</p>
-                      <strike class="item__prev_price">2 300 047 com</strike>
+                      <div class="prev__price_wrapper">
+                        <strike class="item__prev_price">2 300 047 com</strike>
+                        <!-- <div class="prev__price_popup"></div> -->
+                      </div>
                     </ul>
                     <p class="item__description">
                       Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
@@ -542,7 +569,19 @@
                   </ul>
                   <ul class="item__price">
                     <p class="item__actual_price">2 100 047 com</p>
-                    <strike class="item__prev_price">2 300 047 com</strike>
+                    <div class="prev__price_wrapper">
+                      <strike class="item__prev_price">2 300 047 com</strike>
+                      <div class="prev__price_popup hide">
+                        <div class="prev__price_left">
+                          <p>Скидка 55%</p>
+                          <p>Скидка покупателя 10%</p>
+                        </div>
+                        <div class="prev__price_right">
+                          <p>-300 com</p>
+                          <p>-30 com</p>
+                        </div>
+                      </div>
+                    </div>
                   </ul>
                 </div>
               </li>
@@ -563,7 +602,10 @@
                   <div class="cart__item_parametrs">
                     <ul class="item__price_mobile">
                       <p class="item__actual_price">494 com</p>
-                      <strike class="item__prev_price">950 com</strike>
+                      <div class="prev__price_wrapper">
+                        <strike class="item__prev_price">950 com</strike>
+                        <!-- <div class="prev__price_popup"></div> -->
+                      </div>
                     </ul>
                     <p class="item__description">
                       Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
@@ -633,7 +675,19 @@
                   </ul>
                   <ul class="item__price">
                     <p class="item__actual_price">494 com</p>
-                    <strike class="item__prev_price">950 сом</strike>
+                    <div class="prev__price_wrapper">
+                      <strike class="item__prev_price">950 сом</strike>
+                      <div class="prev__price_popup hide">
+                        <div class="prev__price_left">
+                          <p>Скидка 55%</p>
+                          <p>Скидка покупателя 10%</p>
+                        </div>
+                        <div class="prev__price_right">
+                          <p>-300 com</p>
+                          <p>-30 com</p>
+                        </div>
+                      </div>
+                    </div>
                   </ul>
                 </div>
               </li>
@@ -926,10 +980,15 @@
             </div>
             <div class="delivery__box_bottom">
               <img src="img/check.svg" class="mark" alt="img" height="22px" width="22px" />
-              <p class="info__block_text font_s">
+              <div class="info__block_text font_s">
                 Обратная доставка товаров на склад при отказе —
-                <span class="free">бесплатно</span>
-              </p>
+                <div class="free__wrapper">
+                  <span class="free">бесплатно</span>
+                  <div class="free__popup font_s hide">
+                    Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <section class="way__pay box">
@@ -946,35 +1005,35 @@
             </div>
           </section>
 
-          <section class="receiver box">
+          <section class="receiver box" id="input__form">
             <div class="way__pay_header">
               <h1 class="header">Получатель</h1>
             </div>
             <div class="receiver__area">
               <div class="receiver__input_name">
                 <label for="" class="input__block_label">Имя</label>
-                <input type="text" class="input" placeholder="Имя" />
+                <input data-set="name" type="text" class="input" placeholder="Имя" />
                 <label for="" class="input__block_error">Ошибка</label>
               </div>
               <div class="receiver__input_surname">
                 <label for="" class="input__block_label">Фамилия</label>
-                <input type="text" class="input" placeholder="Фамилия" />
+                <input data-set="surname" type="text" class="input" placeholder="Фамилия" />
                 <label for="" class="input__block_error">Ошибка</label>
               </div>
               <div class="receiver__input_email">
                 <label for="" class="input__block_label">Почта</label>
-                <input type="text" class="input" placeholder="Почта" />
+                <input data-set="email" type="text" class="input" placeholder="Почта" />
                 <label for="" class="input__block_error">Ошибка</label>
               </div>
               <div class="receiver__input_phone">
                 <label for="" class="input__block_label">Телефон</label>
-                <input type="text" class="input" placeholder="Телефон" />
+                <input data-set="phone" type="text" class="input" placeholder="Телефон" />
                 <label for="" class="input__block_error">Ошибка</label>
               </div>
               <div class="receiver__input_inn">
                 <label for="" class="input__block_label">ИНН</label>
-                <input type="text" class="input" placeholder="ИНН" />
-                <label for="" class="input__block_data">Для томоженного оформления</label>
+                <input data-set="inn" type="text" class="input" placeholder="ИНН" />
+                <label for="" class="input__block_error">Для томоженного оформления</label>
               </div>
 
               <!-- <div class="receiver__area_up">
@@ -1034,10 +1093,16 @@
                     </div>
                     <div class="info__block">
                       <img src="img/check.svg" class="mark" alt="img" height="22px" width="22px" />
-                      <p class="info__block_text font_s">
+                      <div class="info__block_text font_s">
                         Обратная доставка товаров на склад при отказе —
-                        <span class="free">бесплатно</span>
-                      </p>
+                        <div class="free__wrapper">
+                          <span class="free">бесплатно</span>
+                          <div class="free__popup font_s hide">
+                            Если товары вам не подойдут, мы вернем их обратно на склад — это
+                            бесплатно
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </li>
                   <li class="payment__list_item">

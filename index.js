@@ -284,23 +284,204 @@ window.addEventListener(
       }
     });
 
+    //----------------------------------------form-validation--------------------------------------------//
+
+    const input_status = {
+      name_is_correct: false,
+      surname_is_correct: false,
+      email_is_correct: false,
+      phone_is_correct: false,
+      inn_is_correct: false,
+      is_empty_fields: false,
+    };
+
+    const receiver_input_name = document.querySelector('.receiver__input_name');
+    const receiver_input_surname = document.querySelector('.receiver__input_surname');
+    const receiver_input_email = document.querySelector('.receiver__input_email');
+    const receiver_input_phone = document.querySelector('.receiver__input_phone');
+    const receiver_input_inn = document.querySelector('.receiver__input_inn');
+
+    const setError = (element, message) => {
+      const error_display = element.parentNode.querySelector('.input__block_error');
+
+      element.classList.add('error');
+      error_display.textContent = message;
+      error_display.classList.add('show', 'error');
+    };
+
+    const setSuccess = (element, message) => {
+      const error_display = element.parentNode.querySelector('.input__block_error');
+
+      element.classList.remove('error');
+      error_display.textContent = message;
+      error_display.classList.remove('error', 'show');
+    };
+
     //-------------------------------------------------input-area------------------------------------------//
 
+    order_button.addEventListener('click', () => {
+      if (receiver_input_name.querySelector('.input').value === '') {
+        setError(receiver_input_name.querySelector('.input'), 'Укажите имя');
+        input_status.is_empty_fields = true;
+      } else {
+        if (input_fields.name_is_correct === true) {
+          setSuccess(receiver_input_name.querySelector('.input'), '');
+        }
+      }
+      if (receiver_input_surname.querySelector('.input').value === '') {
+        setError(receiver_input_surname.querySelector('.input'), 'Введите фамилию');
+        input_status.is_empty_fields = true;
+      } else {
+        if (input_fields.surname_is_correct === true) {
+          setSuccess(receiver_input_surname.querySelector('.input'), '');
+        }
+      }
+      if (receiver_input_email.querySelector('.input').value === '') {
+        setError(receiver_input_email.querySelector('.input'), 'Укажите электронную почту');
+        input_status.is_empty_fields = true;
+      } else {
+        if (input_fields.email_is_correct === true) {
+          setSuccess(receiver_input_email.querySelector('.input'), '');
+        }
+      }
+      if (receiver_input_phone.querySelector('.input').value === '') {
+        setError(receiver_input_phone.querySelector('.input'), 'Укажите номер телефона');
+        input_status.is_empty_fields = true;
+      } else {
+        if (input_fields.phone_is_correct === true) {
+          setSuccess(receiver_input_phone.querySelector('.input'), '');
+        }
+      }
+      if (receiver_input_inn.querySelector('.input').value === '') {
+        setError(receiver_input_inn.querySelector('.input'), 'Укажите индекс');
+        input_status.is_empty_fields = true;
+      } else {
+        if (input_fields.inn_is_correct === true) {
+          setSuccess(receiver_input_inn.querySelector('.input'), '');
+        }
+      }
+
+      if (input_status.is_empty_fields) {
+        if (document.body.clientWidth <= '430') {
+          document.getElementById('input__form').scrollIntoView();
+        }
+        input_status.is_empty_fields = false;
+      }
+    });
+
     const input_fields = document.querySelectorAll('.input');
+
+    const inputValidationHandler = (input) => {
+      const rule = input.dataset.set;
+      let reg;
+
+      switch (rule) {
+        case 'name':
+          input.value
+            ? (input_fields.name_is_correct = true)
+            : (input_fields.name_is_correct = false);
+          break;
+        case 'surname':
+          input.value
+            ? (input_fields.surname_is_correct = true)
+            : (input_fields.surname_is_correct = false);
+          break;
+        case 'email':
+          if (input.value === '') {
+            input_fields.surname_is_correct = false;
+            setSuccess(input, '');
+            break;
+          }
+          reg =
+            /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+          if (!reg.test(input.value.trim())) {
+            input_fields.email_is_correct = false;
+            setError(input, 'Проверьте адрес электронной почты');
+          } else {
+            input_fields.email_is_correct = true;
+            setSuccess(input, '');
+          }
+          break;
+        case 'phone':
+          if (input.value === '') {
+            input_fields.phone_is_correct = false;
+            setSuccess(input, '');
+            break;
+          }
+          reg =
+            /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+          if (!reg.test(input.value.trim())) {
+            input_fields.phone_is_correct = false;
+            setError(input, 'Формат: +9 999 999 99 99');
+          } else {
+            input_fields.phone_is_correct = true;
+            setSuccess(input, '');
+          }
+          break;
+        case 'inn':
+          if (input.value === '') {
+            input_fields.inn_is_correct = false;
+            setSuccess(input, '');
+            break;
+          }
+          reg = /\D\d{0,10}\D/;
+          if (!reg.test(input.value.trim())) {
+            input_fields.inn_is_correct = false;
+            setError(input, 'Формат: 1234567');
+          } else {
+            input_fields.inn_is_correct = true;
+            setSuccess(input, '');
+          }
+        default:
+          break;
+      }
+    };
+
+    input_fields.forEach((field) => {
+      field.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+          inputValidationHandler(field);
+        }
+      });
+    });
 
     input_fields.forEach((input) => {
       input.onfocus = () => {
         input.placeholder = '';
+        input.classList.remove('error');
         input.parentNode.querySelector('.input__block_label').classList.add('show');
       };
       input.onblur = () => {
         input.placeholder = input.parentNode.querySelector('.input__block_label').textContent;
 
+        inputValidationHandler(input);
+
         if (input.value === '') {
-          input.parentNode.querySelector('.input__block_label').classList.remove('show');
+          input.parentNode.querySelector('.input__block_label').classList.remove('show', 'error');
         }
       };
     });
+
+    const prev_prices = document.querySelectorAll('.item__prev_price');
+
+    prev_prices.forEach((price) => {
+      console.log(price);
+      price.addEventListener('click', () => {
+        price.parentNode.querySelector('.prev__price_popup').classList.toggle('hide');
+      });
+    });
+
+    const free_labels = document.querySelectorAll('.free');
+
+    free_labels.forEach((label) =>
+      label.addEventListener('click', () => {
+        label.parentNode.querySelector('.free__popup').classList.toggle('hide');
+      }),
+    );
+
+    // setError(receiver_input_name, 'Укажите имя');
+
+    // const validate_name = (string) => {};
   },
   false,
 );
