@@ -369,6 +369,38 @@ window.addEventListener(
       }
     });
 
+    const get_input_numbers = (input) => {
+      return input.value.replace(/\D/g, '');
+    };
+
+    const phone_field = receiver_input_phone.querySelector('.input');
+    phone_field.addEventListener('input', (event) => {
+      const input_numbers = get_input_numbers(event.target);
+
+      if (!input_numbers) {
+        return (event.target.value = '');
+      }
+
+      let formated_value = '+' + input_numbers[0];
+      if (input_numbers.length > 1) {
+        formated_value = formated_value + ' ' + input_numbers.substring(1, 4);
+      }
+      if (input_numbers.length >= 5) {
+        formated_value = formated_value + ' ' + input_numbers.substring(4, 7);
+      }
+      if (input_numbers.length >= 8) {
+        formated_value = formated_value + ' ' + input_numbers.substring(7, 9);
+      }
+      if (input_numbers.length >= 10) {
+        formated_value = formated_value + ' ' + input_numbers.substring(9, 11);
+      }
+      if (input_numbers.length >= 12) {
+        formated_value = formated_value + ' ' + input_numbers.substring(11, input_numbers.length);
+      }
+
+      event.target.value = formated_value;
+    });
+
     const input_fields = document.querySelectorAll('.input');
 
     const inputValidationHandler = (input) => {
@@ -377,9 +409,13 @@ window.addEventListener(
 
       switch (rule) {
         case 'name':
-          input.value
-            ? (input_fields.name_is_correct = true)
-            : (input_fields.name_is_correct = false);
+          if (input.value == '') {
+            input_fields.name_is_correct = true;
+            setSuccess(input, '');
+          } else {
+            input_fields.name_is_correct = false;
+          }
+
           break;
         case 'surname':
           input.value
@@ -408,9 +444,7 @@ window.addEventListener(
             setSuccess(input, '');
             break;
           }
-          reg =
-            /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-          if (!reg.test(input.value.trim())) {
+          if (input.value.length > 30 || input.value.length < 16) {
             input_fields.phone_is_correct = false;
             setError(input, 'Формат: +9 999 999 99 99');
           } else {
@@ -424,7 +458,7 @@ window.addEventListener(
             setSuccess(input, '');
             break;
           }
-          reg = /\D\d{0,10}\D/;
+          reg = /^\d{0,10}$/;
           if (!reg.test(input.value.trim())) {
             input_fields.inn_is_correct = false;
             setError(input, 'Формат: 1234567');
@@ -478,10 +512,6 @@ window.addEventListener(
         label.parentNode.querySelector('.free__popup').classList.toggle('hide');
       }),
     );
-
-    // setError(receiver_input_name, 'Укажите имя');
-
-    // const validate_name = (string) => {};
   },
   false,
 );
