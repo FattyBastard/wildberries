@@ -409,12 +409,9 @@ window.addEventListener(
 
       switch (rule) {
         case 'name':
-          if (input.value == '') {
-            input_fields.name_is_correct = true;
-            setSuccess(input, '');
-          } else {
-            input_fields.name_is_correct = false;
-          }
+          input.value
+            ? (input_fields.name_is_correct = true)
+            : (input_fields.name_is_correct = false);
 
           break;
         case 'surname':
