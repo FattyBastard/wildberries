@@ -436,7 +436,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 17px;
-  padding-top: 17px;
+  padding-top: 0px;
   border-bottom: 1px solid #dbdbdf;
 }
 
@@ -524,6 +524,10 @@ body {
 .missing__goods_list {
   display: flex;
   flex-direction: column;
+}
+
+.cart__list {
+  margin-bottom: 22px;
 }
 
 .cart__list_item,
